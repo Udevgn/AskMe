@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dell.askme.Main4Activity">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="home"/>
+    <item
+        android:id="@+id/read"
+        android:icon="@drawable/read"
+        android:title="read"/>
+    <item
+        android:id="@+id/write"
+        android:icon="@drawable/write"
+        android:title="write"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile"
+        android:title="profile"/>
+</menu>
