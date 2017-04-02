@@ -55,7 +55,7 @@ BottomBar bottombar;
             }
 
         });
-       bottombar.mapColorForTab(0,"#f44336");
+        bottombar.mapColorForTab(0,"#f44336");
         bottombar.mapColorForTab(1,"#e91e63");
         bottombar.mapColorForTab(2,"#9c27b0");
         bottombar.mapColorForTab(3,"#673ab7");

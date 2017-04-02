@@ -19,6 +19,10 @@ public class QDatabase {
     public String option3;
     public String option4;
     public String Username;
+    public int comm_count;
+    public int upvote_count;
+    public int downvote_count;
+    String comment;
     private DatabaseReference mDatabase;
 
 
@@ -27,13 +31,18 @@ public class QDatabase {
     public QDatabase() {
     }
 
-    public QDatabase(String Question, String option1,String option2,String option3,String option4,String Username) {
+    public QDatabase(String Question, String option1,String option2,String option3,String option4,String Username,int upvote_count,int downvote_count,int comm_count,String comment) {
         this.Question = Question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3= option3;
         this.option4 = option4;
         this.Username = Username;
+        this.comm_count = comm_count;
+        this.upvote_count = upvote_count;
+        this.downvote_count = downvote_count;
+        this.comment = comment;
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 }
