@@ -55,7 +55,16 @@ public class WriteFragment extends Fragment {
         uploadoption4 = (EditText) view.findViewById(R.id.uploadoption4);
         uploadpost = (Button)view.findViewById(R.id.uploadpost);
        // uploadpost.setOnClickListener(new View.OnClickListener(){
-         writePost(container);
+        uploadpost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                writePost(v);
+
+            }
+        });
+//         this.writePost(container);
+
+
         //});
 
         return view;

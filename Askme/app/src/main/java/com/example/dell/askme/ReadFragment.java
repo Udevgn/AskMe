@@ -3,6 +3,7 @@ package com.example.dell.askme;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,10 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.data;
 import static android.R.attr.onClick;
 import static android.R.id.list;
 import static android.support.v7.widget.AppCompatDrawableManager.get;
+import static com.example.dell.askme.R.id.downvote_count;
 import static com.example.dell.askme.R.string.one;
 import static com.example.dell.askme.ReadFragment.getData;
 
@@ -37,10 +38,10 @@ import static com.example.dell.askme.ReadFragment.getData;
  * A simple {@link Fragment} subclass.
  */
 public class ReadFragment extends Fragment {
+    static List<QDatabase> data = new ArrayList<QDatabase>();
     public static DatabaseReference mDatabase;
     private RecyclerView recyclerView;
     private MyRecycleAdapter myRecycleAdapter;
-    private static  List<QDatabase>  data;
     public ReadFragment() {
         // Required empty public constructor
 
@@ -64,7 +65,7 @@ public class ReadFragment extends Fragment {
         return  view;
     }
     public static List<QDatabase> getData(){
-        data = new ArrayList<QDatabase>();
+
         mDatabase = FirebaseDatabase.getInstance().getReference("questions");
 
 
@@ -84,12 +85,15 @@ public class ReadFragment extends Fragment {
                         String opt2 = (String) messageSnapshot.child("option2").getValue();
                         String opt3 = (String) messageSnapshot.child("option3").getValue();
                         String opt4 = (String) messageSnapshot.child("option4").getValue();
-                        int comm_count =  (int) messageSnapshot.child("comm_count").getValue();
-                        int upvote_count =  (int) messageSnapshot.child("upvote_count").getValue();
-                        int downvote_count =  (int) messageSnapshot.child("downvote_count").getValue();
+
+                        System.out.println("ppppppppppppppppppppppppp\n"+opt1+"\n"+opt2+"\n"+opt3+"\n"+opt4);
+                        long comm_count =  (long) messageSnapshot.child("comm_count").getValue();
+                        long upvote_count =  (long) messageSnapshot.child("upvote_count").getValue();
+                        long downvote_count =  (long) messageSnapshot.child("downvote_count").getValue();
                         String comment = "dummy";
                         QDatabase qDatabase = new QDatabase(qvalue, opt1,opt2,opt3,opt4,76,56,23,comment);
-                        data.add(qDatabase);
+                        ReadFragment.data.add(qDatabase);
+
                     }
                 }
 
