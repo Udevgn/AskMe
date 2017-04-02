@@ -1,8 +1,5 @@
 package com.example.dell.askme;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -59,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = inputEmail.getText().toString().trim();
+                final String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
@@ -91,7 +88,8 @@ public class SignupActivity extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
-                                } else {
+                                } else { //Intent i = new Intent(SignupActivity.this,HomeFragment.class);
+                                    //i.putExtra("email",email);
                                     startActivity(new Intent(SignupActivity.this, UInterface.class));
                                     finish();
                                 }
