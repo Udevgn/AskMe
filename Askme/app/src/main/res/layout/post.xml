@@ -116,6 +116,7 @@
        android:layout_height="match_parent">
 
        <ImageButton
+           android:src="@drawable/chatbubble"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            card_view:srcCompat="@drawable/common_google_signin_btn_icon_dark"
@@ -123,6 +124,7 @@
            android:layout_weight="1" />
 
        <ImageButton
+           android:src="@drawable/uploadbutton"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            card_view:srcCompat="@drawable/common_google_signin_btn_icon_dark"
