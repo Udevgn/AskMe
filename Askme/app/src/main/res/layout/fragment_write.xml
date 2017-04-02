@@ -10,7 +10,8 @@
 
 
     <TextView
-        android:text="uploadquestiontext"
+        android:text="Enter your questions"
+        android:textStyle="italic|bold"
         android:layout_height="wrap_content"
         android:id="@+id/uploadquestiontext"
         android:layout_weight="1"
@@ -19,7 +20,7 @@
 
     <EditText
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:hint="Enter question here"
         android:ems="10"
         android:id="@+id/uploadquestion"
         android:inputType="textMultiLine"
@@ -27,7 +28,8 @@
         android:layout_width="350dp" />
 
     <TextView
-        android:text="TextView"
+        android:textStyle="italic|bold"
+        android:text="Option 1"
         android:layout_height="wrap_content"
         android:id="@+id/textView15"
         android:layout_weight="1"
@@ -37,14 +39,15 @@
     <EditText
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Option 1"
         android:ems="10"
         android:id="@+id/uploadoption1"
         android:gravity="center"
         android:layout_width="match_parent" />
 
     <TextView
-        android:text="TextView"
+        android:text="Option 2"
+        android:textStyle="italic|bold"
         android:layout_height="wrap_content"
         android:id="@+id/textView24"
         android:layout_weight="1"
@@ -54,17 +57,18 @@
     <EditText
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/uploadoption2"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_width="match_parent" />
+        android:layout_width="match_parent"
+        android:hint="Option 2" />
 
     <TextView
-        android:text="TextView"
+        android:text="Option 3"
         android:layout_height="wrap_content"
         android:id="@+id/textView17"
+        android:textStyle="italic|bold"
         android:layout_weight="1"
         android:gravity="center"
         android:layout_width="match_parent" />
@@ -72,33 +76,34 @@
     <EditText
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/uploadoption3"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_width="match_parent" />
+        android:layout_width="match_parent"
+        android:hint="Option 3" />
 
     <TextView
-        android:text="TextView"
         android:layout_height="wrap_content"
         android:id="@+id/textView18"
         android:layout_weight="1"
+        android:text="Option 4"
         android:gravity="center"
+        android:textStyle="italic|bold"
         android:layout_width="match_parent" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Option 4"
         android:layout_margin="15dp"
         android:ems="10"
         android:id="@+id/uploadoption4"
         android:gravity="center"/>
 
     <Button
-        android:text="uploadpost"
+        android:text="SUBMIT"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/uploadpost"
