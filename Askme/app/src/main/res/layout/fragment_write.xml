@@ -104,7 +104,8 @@
         android:id="@+id/uploadpost"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:onClick="writePost"/>
 
 
 </LinearLayout>
