@@ -22,7 +22,7 @@ import static com.example.dell.askme.R.string.one;
  * A simple {@link Fragment} subclass.
  */
 public class WriteFragment extends Fragment {
-    DatabaseReference mDatabase;
+    static DatabaseReference mDatabase;
     String userid;
     Button uploadpost ;
     EditText uploadquestion;
@@ -34,6 +34,8 @@ public class WriteFragment extends Fragment {
     public WriteFragment() {
         // Required empty public constructor
 
+
+
     }
 
 
@@ -43,6 +45,8 @@ public class WriteFragment extends Fragment {
         // Inflate the layout for this fragment
 
         //
+
+        Toast.makeText(getContext()," i am alive",Toast.LENGTH_LONG).show();
         View view  =inflater.inflate(R.layout.fragment_write, container, false);
         uploadquestion = (EditText) view.findViewById(R.id.uploadquestion);
         uploadoption1 = (EditText) view.findViewById(R.id.uploadoption1);
@@ -50,23 +54,25 @@ public class WriteFragment extends Fragment {
         uploadoption3 = (EditText) view.findViewById(R.id.uploadoption3);
         uploadoption4 = (EditText) view.findViewById(R.id.uploadoption4);
         uploadpost = (Button)view.findViewById(R.id.uploadpost);
+       // uploadpost.setOnClickListener(new View.OnClickListener(){
+         writePost(container);
+        //});
 
-        uploadpost.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                if(uploadquestion.getText().toString().isEmpty()|| uploadoption1.getText().toString().isEmpty()||uploadoption2.getText().toString().isEmpty()){
-                    Toast.makeText(getContext(),"required fields are empty!!",Toast.LENGTH_LONG).show();
-                }
-                else{
-                    mDatabase= FirebaseDatabase.getInstance().getReference("questions");
-                    userid = mDatabase.push().getKey();
-                    question = new QDatabase(uploadquestion.getText().toString(), uploadoption1.getText().toString(),uploadoption2.getText().toString(),uploadoption3.getText().toString(),uploadoption4.getText().toString(),"utkarshdevgan",0,0,0,"");
-                    mDatabase.child(userid).setValue(question);
-                }
-            }
-        });
         return view;
     }
+  public void writePost(View view){
+           mDatabase= FirebaseDatabase.getInstance().getReference("questions");
+          if(uploadquestion.getText().toString().isEmpty()|| uploadoption1.getText().toString().isEmpty()||uploadoption2.getText().toString().isEmpty()){
+              Toast.makeText(getContext(),"required fields are empty!!",Toast.LENGTH_LONG).show();
+          }
+          else{
 
+              userid = mDatabase.push().getKey();
+              question = new QDatabase(uploadquestion.getText().toString(), uploadoption1.getText().toString(),uploadoption2.getText().toString(),uploadoption3.getText().toString(),uploadoption4.getText().toString(),0,0,0,"dummy");
+              mDatabase.child(userid).setValue(question);
+          }
+
+  }
 
 
 }

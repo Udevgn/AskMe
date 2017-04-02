@@ -8,7 +8,7 @@
         android:title="home"/>
     <item
         android:id="@+id/read"
-        android:icon="@drawable/read"
+        android:icon="@drawable/suchitwrite"
         android:title="read"/>
     <item
         android:id="@+id/write"
