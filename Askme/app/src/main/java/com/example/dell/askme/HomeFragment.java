@@ -32,9 +32,9 @@ ListView listView;
         // Inflate the layout for this fragment
 
       View view = inflater.inflate(R.layout.fragment_home, container, false);
-      /*  listView =(ListView)view.findViewById(R.id.list);
+        listView =(ListView)view.findViewById(R.id.list);
 
-        String[] listid ={"profile1","profile2"};  //Enter profile id here in text...list is clickable
+ /*        String[] listid ={"profile1","profile2"};  //Enter profile id here in text...list is clickable
         ListAdapter adapter = new ListAdapter(this,listid);
         listView.setAdapter(adapter);
 
