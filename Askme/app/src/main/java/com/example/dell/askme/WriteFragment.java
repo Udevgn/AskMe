@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static android.R.attr.version;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 import static com.example.dell.askme.R.id.upload;
 import static com.example.dell.askme.R.string.one;
@@ -22,6 +23,7 @@ import static com.example.dell.askme.R.string.one;
  * A simple {@link Fragment} subclass.
  */
 public class WriteFragment extends Fragment {
+    public static int versionw =0;
     static DatabaseReference mDatabase;
     String userid;
     Button uploadpost ;
@@ -75,9 +77,10 @@ public class WriteFragment extends Fragment {
               Toast.makeText(getContext(),"required fields are empty!!",Toast.LENGTH_LONG).show();
           }
           else{
-
+              versionw++;
               userid = mDatabase.push().getKey();
               question = new QDatabase(uploadquestion.getText().toString(), uploadoption1.getText().toString(),uploadoption2.getText().toString(),uploadoption3.getText().toString(),uploadoption4.getText().toString(),0,0,0,"dummy");
+              ReadFragment.data.add(question);
               mDatabase.child(userid).setValue(question);
           }
 
