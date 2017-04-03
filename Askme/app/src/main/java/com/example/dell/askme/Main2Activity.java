@@ -4,13 +4,9 @@ import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
-//import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.TransitionDrawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Layout;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -20,18 +16,18 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-//import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
-import static android.os.Build.VERSION_CODES.M;
+//import android.graphics.Color;
+//import com.google.firebase.auth.AuthResult;
 
 public class Main2Activity extends AppCompatActivity {
 public EditText emailField;
     public EditText passwordField;
     Button signup;
+
     private  FirebaseAuth Auth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     String TAG ="h";

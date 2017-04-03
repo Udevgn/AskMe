@@ -30,7 +30,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="have fun while answering the questions posted by different users and get to know the statistics of all the questions"
+            android:text="Have fun while answering the questions which revolves around your life"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="@dimen/slide_desc" />

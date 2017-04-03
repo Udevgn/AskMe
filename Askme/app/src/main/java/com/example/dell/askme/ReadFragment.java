@@ -1,21 +1,15 @@
 package com.example.dell.askme;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 import static android.R.attr.onClick;
 import static android.R.attr.version;
@@ -36,15 +31,20 @@ import static com.example.dell.askme.ReadFragment.getData;
 import static com.example.dell.askme.WriteFragment.versionw;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
+
+
 public class ReadFragment extends Fragment {
     public static List<QDatabase> data = new ArrayList<QDatabase>();
     public static DatabaseReference mDatabase;
+
     private RecyclerView recyclerView;
     private MyRecycleAdapter myRecycleAdapter;
     public static  int versionr=0;
+
     public ReadFragment() {
         // Required empty public constructor
 
@@ -57,6 +57,8 @@ public class ReadFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+       // requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        //setProgressBarIndeterminateVisibility(true);
         View view = inflater.inflate(R.layout.fragment_read, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.myrecyclerview);
         recyclerView.setHasFixedSize(true);
@@ -65,14 +67,21 @@ public class ReadFragment extends Fragment {
         LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
+        //progressBar=(ProgressBar)view.findViewById((R.id.progress_bar)) ;
+        //mycardview=(CardView)view.findViewById(R.id.mycardview);
         return  view;
+
+
     }
+
     public static List<QDatabase> getData() {
         if (versionr == WriteFragment.versionw-1){
             mDatabase = FirebaseDatabase.getInstance().getReference("questions");
            versionr++;
 
+
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
@@ -80,6 +89,10 @@ public class ReadFragment extends Fragment {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //mycardview.setVisibility(View.VISIBLE);
+               //progressBar.setVisibility(View.GONE);
+               //recyclerView.setVisibility(View.VISIBLE);
+
                 for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
                     {
                         //String e_mail = (String) messageSnapshot.child("email").getValue();
