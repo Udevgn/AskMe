@@ -1,26 +1,27 @@
 package com.example.dell.askme;
 
+import static com.example.dell.askme.R.id.following;
+
 /**
  * Created by DELL on 4/1/2017.
  */
 
 public class UserDatabase {
     String username;
-    String following ;
-    String follows ;
-    String name;
+   public static long following=0 ;
+    public static  long  followers=0 ;
+    public static  String name;
     String sirname;
     int profile_pic;
     public static UserDatabase userDatabase;
-    public UserDatabase(String following, String name, String follows, String sirname, String username) {
-        this.following = following;
-        this.name = name;
-        this.follows = follows;
-        this.sirname = sirname;
-        this.username = username;
-    }
-    public void setImage(int profile_pic){
-        this.profile_pic = profile_pic;
-    }
+   public void assignuserName(String username){
+       UserDatabase.name = username;
+   }
 
+    public void incrementFollowers(){
+        UserDatabase.followers ++;
+    }
+    public void incrementFollowing(){
+        UserDatabase.following++;
+    }
 }
